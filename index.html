@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <!-- tailwind CSs -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+        @layer components {
+            .input {
+                @apply rounded bg-gray-100 w-full py-1 px-2 outline-none
+            }
+
+            .li{
+                @apply rounded bg-orange-200 py-2 px-3 flex justify-between
+            }
+        
+        }
+    </style>
+    </head>
+    <body class="bg-indigo-800 p-10">
+
+        <form name="bookForm" class="bg-white p-10 rounded max-w-xl mx-auto ">
+            <h4 class="font-semibold text-xl">Book Library</h4>
+
+            <div class="space-y-3 mt-3">
+                <input id="bookTitle" type="text" placeholder="Book Title"
+                    class="input" required>
+                <input id="bookAuthor" type="text" placeholder="Book Author"
+                    class="input" required>
+                <button type="submit"
+                    class="px-3 py-1 bg-orange-500 rounded uppercas font-semibold text-sm text-white">Save</button>
+            </div>
+        </form>
+
+
+
+         <!-- Added books -->
+         <div id="con" class="bg-white p-5 mt-3 rounded max-w-xl mx-auto ">
+            <h4 class="font-semibold text-xl">Added Books (<span id="bookCount">0</span>)</h4>
+
+            <ul class="space-y-3 mt-3" id="renderedLibrary">
+                
+            </ul>
+        </div>
+
+        <script src="./assests/data/lib.js"></script>
+        <script src="./assests/data/books.js"></script>
+        <script src="./assests/js/main.js"></script>
+
+    </body>
+</html>
